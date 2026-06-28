@@ -23,7 +23,7 @@ export default function JobberEmbed() {
             You&rsquo;ll talk to Gage, the owner — not a call center.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-muted">
-            <li>• Same- or next-day pickup available</li>
+            <li>• Same & next-day pickup available</li>
             <li>• Upfront, flat-rate quotes</li>
             <li>• Military, First Responder &amp; Holiday discounts</li>
           </ul>

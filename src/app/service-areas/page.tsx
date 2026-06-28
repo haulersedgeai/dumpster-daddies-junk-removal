@@ -28,7 +28,7 @@ export default function ServiceAreasPage() {
       <PageHero
         eyebrow="Service Areas"
         title="20-mile radius from Leander."
-        intro="Same- or next-day junk removal across Central Texas — Cedar Park, Liberty Hill, Georgetown, Round Rock, Lakeway, Bee Cave, Pflugerville, Hutto, NW Austin, and every town in between."
+        intro="Same and next-day junk removal across Central Texas — Cedar Park, Liberty Hill, Georgetown, Round Rock, Lakeway, Bee Cave, Pflugerville, Hutto, NW Austin, and every town in between."
         breadcrumbs={[{ name: "Home", href: "/" }, { name: "Service Areas" }]}
       />
 
@@ -58,7 +58,7 @@ export default function ServiceAreasPage() {
 
           <div className="mt-16">
             <h3 className="font-display font-bold text-2xl tracking-tight">Also serving</h3>
-            <p className="mt-2 text-muted text-sm">Within our 20-mile radius — call to confirm same- or next-day availability.</p>
+            <p className="mt-2 text-muted text-sm">Within our 20-mile radius — call to confirm same and next-day availability.</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {secondaryTowns.map((t) => (
                 <span key={t} className="chip">{t}</span>

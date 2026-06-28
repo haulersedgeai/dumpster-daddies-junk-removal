@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Phone, Star, CheckCircle2, Sparkles } from "lucide-react";
+import { Phone, CheckCircle2, Sparkles } from "lucide-react";
 import { site } from "@/data/site";
 import QuoteLink from "./QuoteLink";
 
@@ -14,7 +14,7 @@ export default function Hero() {
         <div className="lg:col-span-7">
           <span className="chip">
             <span className="inline-block h-2 w-2 rounded-full bg-signal animate-pulse" />
-            Same- or Next-Day Service Available
+            Same & Next-Day Service Available
           </span>
 
           <h1 className="mt-5 font-display font-bold text-[40px] sm:text-[56px] lg:text-[68px] leading-[0.95] tracking-tight">
@@ -26,7 +26,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 text-lg text-muted max-w-xl leading-relaxed">
-            We walk in, carry it out, sweep it clean, and haul it away. Same- or next-day junk removal across Leander, Cedar Park, and 20 miles around — with upfront, flat-rate pricing.
+            We walk in, carry it out, sweep it clean, and haul it away. Same and next-day junk removal across Leander, Cedar Park, and 20 miles around — with upfront, flat-rate pricing.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -40,10 +40,7 @@ export default function Hero() {
 
           <div className="mt-8 flex flex-wrap gap-2">
             <span className="chip">
-              <Star className="h-3.5 w-3.5 fill-signal text-signal" /> 5.0 · {site.reviewCount} Reviews
-            </span>
-            <span className="chip">
-              <CheckCircle2 className="h-3.5 w-3.5 text-signal" /> Same/Next-Day Service
+              <CheckCircle2 className="h-3.5 w-3.5 text-signal" /> Same & Next-Day Service
             </span>
             <span className="chip">
               <CheckCircle2 className="h-3.5 w-3.5 text-signal" /> Military & First Responder Discounts

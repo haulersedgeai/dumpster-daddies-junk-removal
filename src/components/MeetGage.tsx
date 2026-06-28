@@ -27,7 +27,7 @@ export default function MeetGage() {
           </div>
           <div className="mt-7">
             <Link href="/about" className="btn-ghost">
-              More about the family <ArrowRight className="h-4 w-4" />
+              Read more <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
         </div>

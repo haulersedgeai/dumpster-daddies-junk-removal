@@ -52,7 +52,7 @@ export interface Service {
 }
 
 export const categories: { key: CategoryKey; title: string; blurb: string }[] = [
-  { key: "junk-removal", title: "Junk Removal", blurb: "Same- or next-day junk pickup and single-item hauling — furniture, appliances, yard debris, the works." },
+  { key: "junk-removal", title: "Junk Removal", blurb: "Same and next-day junk pickup and single-item hauling — furniture, appliances, yard debris, the works." },
   { key: "large-cleanouts", title: "Cleanouts", blurb: "Whole-house, estate, eviction, hoarding, garage, storage, and commercial cleanouts under one roof." },
   { key: "demolition", title: "Demolition", blurb: "Light demolition for sheds, decks, fences, barns, hot tubs — and we haul the debris on the same visit." },
   { key: "dumpster-rentals", title: "Dumpster Rentals", blurb: "17-yard dumpsters dropped to your driveway. Flat rate, no surprise fees." },
@@ -82,9 +82,9 @@ export const services: Service[] = [
     title: "Junk Removal",
     shortTitle: "Junk Removal",
     category: "junk-removal",
-    blurb: "Same- or next-day junk pickup with upfront pricing — we load, sweep, and haul it all away.",
+    blurb: "Same and next-day junk pickup with upfront pricing — we load, sweep, and haul it all away.",
     description:
-      "Full-service junk removal for homes and businesses in Leander, Cedar Park, and across Central Texas. We do the lifting, loading, and cleanup so you don't have to. Upfront flat-rate pricing, no hidden fees, same- or next-day availability.",
+      "Full-service junk removal for homes and businesses in Leander, Cedar Park, and across Central Texas. We do the lifting, loading, and cleanup so you don't have to. Upfront flat-rate pricing, no hidden fees, same and next-day availability.",
     intro: [
       "Junk Removal is our bread and butter. If it'll fit in our truck and isn't hazardous, we'll haul it — couches, mattresses, appliances, bagged trash, yard debris, remodel leftovers, garage clutter, the works.",
       "We're a family-owned Leander crew, so you're not getting a national franchise quoting through a call center. You get Gage and his team, on the phone and on the truck.",
@@ -233,12 +233,12 @@ export const services: Service[] = [
     pricingNotes: STANDARD_PRICING,
     process: STANDARD_PROCESS,
     description:
-      "Garage cleanouts done right. We clear out years of accumulated tools, boxes, furniture, holiday decor, and forgotten projects — then sweep the floor so you can actually park in there again. Upfront flat-rate pricing, same- or next-day available.",
+      "Garage cleanouts done right. We clear out years of accumulated tools, boxes, furniture, holiday decor, and forgotten projects — then sweep the floor so you can actually park in there again. Upfront flat-rate pricing, same and next-day available.",
     included: [
       "Full clear of contents",
       "Sort & set aside anything you want kept",
       "Floor-swept broom-clean finish",
-      "Same- or next-day available",
+      "Same and next-day available",
     ],
     commonItems: [
       "Boxes, bins, and old storage",
@@ -250,7 +250,7 @@ export const services: Service[] = [
       { q: "Will you help me sort what stays?", a: "Yes. Tell us what's keeping, and we'll move the rest out." },
       { q: "How much does a garage cleanout cost?", a: "It's volume-based. Most two-car garages run mid-range — we give an exact flat-rate quote on arrival." },
       { q: "Do you take old paint, propane tanks, batteries?", a: "Paint and chemicals no, propane tanks must be drained/disconnected, batteries we can recycle. We'll point you to options for anything we can't take." },
-      { q: "Can you do same- or next-day garage cleanouts?", a: "Yes, that's the standard — call before noon and we usually have an afternoon slot." },
+      { q: "Can you do same and next-day garage cleanouts?", a: "Yes, that's the standard — call before noon and we usually have an afternoon slot." },
       { q: "Will you sweep the floor when you're done?", a: "Yes. Broom-clean is the finish on every garage job." },
     ],
   },
@@ -376,7 +376,7 @@ export const services: Service[] = [
       "Upstairs and tight-access pickup",
       "Donation when items are in good shape",
       "Responsible mattress recycling",
-      "Same- or next-day available",
+      "Same and next-day available",
     ],
     commonItems: [
       "Couches and sectionals",
@@ -396,25 +396,25 @@ export const services: Service[] = [
     slug: "dumpster-rentals",
     title: "Dumpster Rentals",
     shortTitle: "Dumpster Rentals",
-    blurb: "17-yard dumpsters starting at $449, flat-rate pricing, no hidden fees, same- or next-day delivery available.",
+    blurb: "17-yard dumpsters starting at $449, flat-rate pricing, no hidden fees, same and next-day delivery available.",
     category: "dumpster-rentals",
     intro: [
-      "17-yard dumpsters starting at $449, flat-rate pricing, no hidden fees, same- or next-day delivery available. Drop in your driveway, fill it on your timeline, we haul it.",
+      "17-yard dumpsters starting at $449, flat-rate pricing, no hidden fees, same and next-day delivery available. Drop in your driveway, fill it on your timeline, we haul it.",
       "Best for remodels and renovations, roofing tear-offs, yard and tree projects, garage clean-outs, and any weekend project where the cleanup is the hard part.",
     ],
     pricingNotes: [
-      "17-yard dumpsters starting at $449, flat-rate pricing, no hidden fees, same- or next-day delivery available.",
+      "17-yard dumpsters starting at $449, flat-rate pricing, no hidden fees, same and next-day delivery available.",
       "No surprise weight fees — the flat rate is the rate.",
       "No concrete, dirt, or hazardous materials in the bin.",
       "Multi-day rental windows are standard. Need it longer? Just ask.",
     ],
     process: STANDARD_PROCESS,
     description:
-      "17-yard dumpsters starting at $449, flat-rate pricing, no hidden fees, same- or next-day delivery available. Perfect for remodels, large yard projects, garage cleanouts, and roofing work. We drop, you fill, we haul.",
+      "17-yard dumpsters starting at $449, flat-rate pricing, no hidden fees, same and next-day delivery available. Perfect for remodels, large yard projects, garage cleanouts, and roofing work. We drop, you fill, we haul.",
     included: [
       "17-yard dumpster delivered to your driveway",
       "Flat-rate price — no surprise weight fees",
-      "Same- or next-day delivery available",
+      "Same and next-day delivery available",
       "Multi-day rental window",
     ],
     commonItems: [
@@ -424,11 +424,11 @@ export const services: Service[] = [
       "Garage and attic cleanouts",
     ],
     faq: [
-      { q: "How much is a dumpster?", a: "17-yard dumpsters start at $449, flat-rate, no hidden fees. Same- or next-day delivery available." },
+      { q: "How much is a dumpster?", a: "17-yard dumpsters start at $449, flat-rate, no hidden fees. Same and next-day delivery available." },
       { q: "How long can I keep it?", a: "We work around your project — multi-day rental windows are standard." },
       { q: "Are there weight limits or surprise fees?", a: "No surprise fees. The flat rate is the rate. Just no concrete, dirt, or hazardous materials." },
       { q: "Will the dumpster damage my driveway?", a: "We place boards under the rails on request, and our drivers know how to drop on most driveways without issue." },
-      { q: "Can I get it the same day?", a: "Yes — same- or next-day delivery is available when our schedule allows. Call early for best chance." },
+      { q: "Can I get it the same day?", a: "Yes — same and next-day delivery is available when our schedule allows. Call early for best chance." },
       { q: "What about permits?", a: "Most driveway placements don't need one. Street placement may — call your city for specifics or ask us and we'll help." },
     ],
   },
@@ -444,20 +444,20 @@ export interface Town {
 }
 
 export const towns: Town[] = [
-  { slug: "leander", name: "Leander", primary: true, distanceMi: 0, coords: [30.5788, -97.8531], blurb: "Home base. We grew up here and we live here — same- or next-day service is the standard." },
-  { slug: "cedar-park", name: "Cedar Park", primary: true, distanceMi: 4, coords: [30.5052, -97.8203], blurb: "Right next door. Same- or next-day Cedar Park jobs are our most common pickup." },
+  { slug: "leander", name: "Leander", primary: true, distanceMi: 0, coords: [30.5788, -97.8531], blurb: "Home base. We grew up here and we live here — same and next-day service is the standard." },
+  { slug: "cedar-park", name: "Cedar Park", primary: true, distanceMi: 4, coords: [30.5052, -97.8203], blurb: "Right next door. Same and next-day Cedar Park jobs are our most common pickup." },
   { slug: "liberty-hill", name: "Liberty Hill", primary: true, distanceMi: 10, coords: [30.6649, -97.9225], blurb: "Quick run up 183A — Liberty Hill cleanouts and demos are a regular." },
   { slug: "georgetown", name: "Georgetown", primary: true, distanceMi: 15, coords: [30.6332, -97.6779], blurb: "From Sun City to downtown Georgetown, we cover the whole town." },
-  { slug: "round-rock", name: "Round Rock", primary: true, distanceMi: 14, coords: [30.5083, -97.6789], blurb: "Round Rock junk removal, same- or next-day available across the city." },
+  { slug: "round-rock", name: "Round Rock", primary: true, distanceMi: 14, coords: [30.5083, -97.6789], blurb: "Round Rock junk removal, same and next-day available across the city." },
   { slug: "jonestown", name: "Jonestown", primary: true, distanceMi: 8, coords: [30.4938, -97.9239], blurb: "Hill-country roads we know by heart — Jonestown jobs are easy for us." },
   { slug: "lago-vista", name: "Lago Vista", primary: true, distanceMi: 12, coords: [30.4585, -97.9892], blurb: "Lakeside cleanouts and demolition — sheds, decks, docks-side debris." },
   { slug: "brushy-creek", name: "Brushy Creek", primary: true, distanceMi: 7, coords: [30.5121, -97.7622], blurb: "Brushy Creek garages, attics, and whole-house cleanouts — same or next day." },
-  { slug: "anderson-mill", name: "Anderson Mill", primary: true, distanceMi: 9, coords: [30.4555, -97.8050], blurb: "Anderson Mill same- or next-day junk removal — a quick run for our crew." },
+  { slug: "anderson-mill", name: "Anderson Mill", primary: true, distanceMi: 9, coords: [30.4555, -97.8050], blurb: "Anderson Mill same and next-day junk removal — a quick run for our crew." },
   { slug: "volente", name: "Volente", primary: true, distanceMi: 10, coords: [30.4413, -97.8753], blurb: "Volente and the lake-edge neighborhoods — cleanouts and hauling." },
   { slug: "point-venture", name: "Point Venture", primary: true, distanceMi: 14, coords: [30.4072, -97.9897], blurb: "Lake-side Point Venture cleanouts and small-structure demo." },
   { slug: "lakeway", name: "Lakeway", primary: true, distanceMi: 16, coords: [30.3743, -97.9786], blurb: "Lakeway homes, garages, and estate cleanouts — careful, on-time service." },
   { slug: "bee-cave", name: "Bee Cave", primary: true, distanceMi: 19, coords: [30.3079, -97.9461], blurb: "Bee Cave cleanouts and dumpster drops — at the edge of our 20-mile radius." },
-  { slug: "pflugerville", name: "Pflugerville", primary: true, distanceMi: 18, coords: [30.4394, -97.6200], blurb: "Pflugerville junk removal, same- or next-day available across the city." },
+  { slug: "pflugerville", name: "Pflugerville", primary: true, distanceMi: 18, coords: [30.4394, -97.6200], blurb: "Pflugerville junk removal, same and next-day available across the city." },
   { slug: "hutto", name: "Hutto", primary: true, distanceMi: 19, coords: [30.5427, -97.5466], blurb: "Hutto cleanouts and furniture removal — we're there same or next day." },
   { slug: "austin-nw", name: "Austin (N/NW)", primary: true, distanceMi: 15, coords: [30.4000, -97.7500], blurb: "Northwest Austin — from the Domain up through 183 and 620." },
 ];
@@ -498,7 +498,7 @@ export const whoWeHelp = [
 ];
 
 export const homeFaq = [
-  { q: "How fast can you come out?", a: "Same- or next-day service is standard across Leander, Cedar Park, and 20 miles around. Call before noon and we'll do our best to be there that afternoon." },
+  { q: "How fast can you come out?", a: "Same and next-day service is standard across Leander, Cedar Park, and 20 miles around. Call before noon and we'll do our best to be there that afternoon." },
   { q: "How is pricing calculated?", a: "Volume-based, flat-rate. We look at how much space your stuff will take in our truck and give you an upfront quote before we lift a thing." },
   { q: "What areas do you cover?", a: "Leander, Cedar Park, Liberty Hill, Georgetown, Round Rock, Lakeway, Bee Cave, Pflugerville, Hutto, NW Austin and everywhere within 20 miles of Leander." },
   { q: "Do you offer discounts?", a: "Yes — Military, First Responder, and Holiday discounts. Call for details." },

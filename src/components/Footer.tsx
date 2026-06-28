@@ -50,7 +50,7 @@ export default function Footer() {
             <span className="font-display font-bold text-lg">Dumpster Daddies</span>
           </div>
           <p className="text-sm text-paper/70 leading-relaxed max-w-sm">
-            Family-owned junk removal & cleanouts based in Leander, TX. Same- or next-day service across Central Texas. 5.0★ on {site.reviewCount} Google reviews.
+            Family-owned junk removal & cleanouts based in Leander, TX. Same and next-day service across Central Texas — flat-rate quotes, broom-clean finish.
           </p>
 
           <div className="space-y-2 text-sm">

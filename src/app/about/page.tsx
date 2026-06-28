@@ -25,7 +25,7 @@ const beliefs = [
 const setsApart = [
   "Owner-on-every-job — you'll meet Gage",
   "5.0★ on 104 Google reviews",
-  "Same- or next-day service across a 20-mile radius",
+  "Same and next-day service across a 20-mile radius",
   "Flat-rate, written quotes — no hidden fees",
   "Military, First Responder, and Holiday discounts",
   "Open 7am–8pm, 7 days a week",
@@ -61,6 +61,28 @@ export default function AboutPage() {
           <div>
             <span className="chip">Why we started</span>
             <h2 className="mt-4 font-display font-bold text-3xl md:text-5xl tracking-tight">
+              We built it to clear the bar.
+            </h2>
+            <div className="mt-5 space-y-4 text-muted leading-relaxed">
+              <p>
+                We started Dumpster Daddies after seeing the same problem over and over: people needed junk removed, and the companies they hired kept letting them down. Missed appointments. Vague pricing that ballooned on arrival. Half-finished jobs. Crews that left the space messier than they found it.
+              </p>
+              <p>
+                We knew it didn&rsquo;t have to be that way. Junk removal isn&rsquo;t complicated — you show up when you say you will, you quote a fair price and stick to it, you do the work, and you leave the space clean. That&rsquo;s it. The bar shouldn&rsquo;t be low, but in this industry, it is. We built Dumpster Daddies to clear it.
+              </p>
+            </div>
+            <p className="mt-6 text-sm text-muted/90 italic">
+              — {site.owner}, owner
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-white border-y border-line">
+        <div className="mx-auto max-w-7xl px-4 py-20 grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <span className="chip">How we run it</span>
+            <h2 className="mt-4 font-display font-bold text-3xl md:text-5xl tracking-tight">
               We do it the way we&rsquo;d want it done at our own house.
             </h2>
             <p className="mt-4 text-muted leading-relaxed">
@@ -70,10 +92,19 @@ export default function AboutPage() {
               Whether it&rsquo;s a single couch out of a third-floor apartment or a whole-house cleanout for a family in transition, the standard doesn&rsquo;t change. We&rsquo;re a small, family-owned crew — and that&rsquo;s on purpose.
             </p>
           </div>
+          <div className="rounded-3xl overflow-hidden border border-line shadow-xl order-first lg:order-last">
+            <Image
+              src="/images/hero-gage.jpg"
+              alt={`${site.owner} with the Dumpster Daddies truck`}
+              width={1200}
+              height={1400}
+              className="w-full h-auto object-cover"
+            />
+          </div>
         </div>
       </section>
 
-      <section className="bg-white border-y border-line">
+      <section className="bg-paper">
         <div className="mx-auto max-w-7xl px-4 py-20">
           <div className="max-w-2xl">
             <span className="chip">What we believe in</span>
@@ -93,7 +124,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-paper">
+      <section className="bg-white border-y border-line">
         <div className="mx-auto max-w-7xl px-4 py-20">
           <div className="max-w-2xl">
             <span className="chip">What sets us apart</span>

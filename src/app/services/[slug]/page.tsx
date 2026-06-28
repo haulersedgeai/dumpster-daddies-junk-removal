@@ -109,7 +109,7 @@ export default async function ServicePage({
             <div className="text-xs uppercase tracking-wider font-semibold text-muted">At a glance</div>
             <h3 className="mt-2 font-display font-bold text-xl">{service.title}</h3>
             <ul className="mt-4 space-y-2 text-sm">
-              <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Same/next-day</span><span>Available</span></li>
+              <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Same & next-day</span><span>Available</span></li>
               <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Hours</span><span>7a–8p, 7 days</span></li>
               <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Pricing</span><span>Flat-rate, upfront</span></li>
               <li className="flex justify-between"><span className="text-muted">Rating</span><span>5.0★ ({site.reviewCount})</span></li>

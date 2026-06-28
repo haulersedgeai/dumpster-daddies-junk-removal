@@ -18,7 +18,7 @@ export default function ReviewsMarquee() {
               {reviewsMeta.rating.toFixed(1)}★ on {reviewsMeta.count} Google reviews.
             </h2>
             <p className="mt-3 text-muted max-w-xl">
-              Real people in Leander, Cedar Park, and across Central Texas — including a lot of large cleanouts and same- or next-day saves.
+              Real people in Leander, Cedar Park, and across Central Texas — including a lot of large cleanouts and same and next-day saves.
             </p>
           </div>
           <Link href="/reviews" className="btn-ghost shrink-0">Read all reviews</Link>

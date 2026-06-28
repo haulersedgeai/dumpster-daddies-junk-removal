@@ -17,7 +17,7 @@ const sources: { key: SourceFilter; label: string }[] = [
 const topics: { key: TopicFilter; label: string }[] = [
   { key: "All", label: "All" },
   { key: "large-cleanouts", label: "Large Cleanouts" },
-  { key: "same-day", label: "Same/Next-Day" },
+  { key: "same-day", label: "Same & Next-Day" },
   { key: "furniture-single", label: "Furniture & Single Items" },
   { key: "featured", label: "Featured" },
 ];

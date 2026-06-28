@@ -6,14 +6,14 @@ const seals = [
   { icon: Star, label: `5.0★ on ${site.reviewCount} Google reviews` },
   { icon: Home, label: "Family-owned · Leander, TX" },
   { icon: Clock, label: "Open 7 days · 7am–8pm" },
-  { icon: CalendarCheck, label: "Same- or next-day available" },
+  { icon: CalendarCheck, label: "Same & Next-Day Available" },
   { icon: Sparkles, label: "Broom-clean guarantee" },
   { icon: ShieldCheck, label: "Military, First Responder & Holiday discounts" },
 ];
 
 export default function CtaBand({
   title = "Ready to get your space back?",
-  body = "Same- or next-day junk removal across Leander, Cedar Park, and 20 miles around. Upfront flat-rate pricing — no hidden fees.",
+  body = "Same and next-day junk removal across Leander, Cedar Park, and 20 miles around. Upfront flat-rate pricing — no hidden fees.",
 }: {
   title?: string;
   body?: string;

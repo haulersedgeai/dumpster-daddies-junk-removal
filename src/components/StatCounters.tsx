@@ -14,7 +14,7 @@ const seals = [
   },
   {
     icon: CalendarCheck,
-    label: "Same- or next-day",
+    label: "Same & Next-Day",
     sub: "7 days · 7am–8pm",
   },
   {
