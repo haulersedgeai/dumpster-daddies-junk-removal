@@ -1,6 +1,6 @@
-import { Phone, ArrowRight } from "lucide-react";
-import Link from "next/link";
+import { Phone } from "lucide-react";
 import { site } from "@/data/site";
+import QuoteLink from "./QuoteLink";
 
 export default function CtaBand({
   title = "Ready to get your space back?",
@@ -19,12 +19,12 @@ export default function CtaBand({
           <h2 className="mt-4 font-display font-bold text-3xl md:text-5xl tracking-tight">{title}</h2>
           <p className="mt-4 text-paper/75 leading-relaxed max-w-xl">{body}</p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={site.phoneHref} className="btn-primary">
+            <QuoteLink className="btn-primary">
+              Get a Free Quote
+            </QuoteLink>
+            <a href={site.phoneHref} className="btn-outline-light">
               <Phone className="h-5 w-5" /> Call {site.phone}
             </a>
-            <Link href="#get-quote" className="btn-ghost bg-white/5 border-white/15 text-paper hover:bg-white/10">
-              Request a Quote <ArrowRight className="h-4 w-4" />
-            </Link>
           </div>
         </div>
         <div className="rounded-2xl border border-white/10 bg-white/5 p-8 backdrop-blur">

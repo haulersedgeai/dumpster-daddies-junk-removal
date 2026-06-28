@@ -1,20 +1,21 @@
 import { Metadata } from "next";
 import { Star } from "lucide-react";
 import PageHero from "@/components/PageHero";
-import ReviewCard from "@/components/ReviewCard";
+import ReviewsWall from "@/components/ReviewsWall";
 import CtaBand from "@/components/CtaBand";
 import JobberEmbed from "@/components/JobberEmbed";
 import { JsonLd } from "@/components/JsonLd";
-import { sortedReviews, reviewsMeta } from "@/lib/reviews";
+import { sortedReviews, reviewsMeta, sourceCounts } from "@/lib/reviews";
 import { breadcrumbSchema } from "@/lib/schema";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: `Reviews — 5.0★ on ${reviewsMeta.count} Google Reviews`,
-  description: `Real Google reviews for ${site.name}. ${reviewsMeta.count} verified reviews, 5.0-star average across Leander, Cedar Park and Central Texas.`,
+  description: `Verified reviews for ${site.name} across Google, Facebook & Yelp. ${reviewsMeta.count} Google reviews, 5.0-star average across Leander, Cedar Park and Central Texas.`,
   alternates: { canonical: "/reviews" },
 };
 
+// AggregateRating stays Google-only to keep the schema honest.
 function reviewsListSchema() {
   return {
     "@context": "https://schema.org",
@@ -28,12 +29,15 @@ function reviewsListSchema() {
       bestRating: "5",
       worstRating: "1",
     },
-    review: sortedReviews.slice(0, 25).map((r) => ({
-      "@type": "Review",
-      author: { "@type": "Person", name: r.name },
-      reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: "5" },
-      reviewBody: r.text,
-    })),
+    review: sortedReviews
+      .filter((r) => r.source === "Google")
+      .slice(0, 25)
+      .map((r) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: r.name },
+        reviewRating: { "@type": "Rating", ratingValue: r.rating, bestRating: "5" },
+        reviewBody: r.text,
+      })),
   };
 }
 
@@ -49,8 +53,8 @@ export default function ReviewsPage() {
       />
       <PageHero
         eyebrow="Reviews"
-        title={`5.0★ on ${reviewsMeta.count} Google reviews.`}
-        intro="Read every review — from single-couch saves to whole-house cleanouts."
+        title="5.0★ across Google, Facebook & Yelp."
+        intro={`${reviewsMeta.count} verified Google reviews plus more on Facebook and Yelp — filter by source or topic and read every one.`}
         breadcrumbs={[{ name: "Home", href: "/" }, { name: "Reviews" }]}
       />
 
@@ -64,24 +68,18 @@ export default function ReviewsPage() {
                 ))}
               </div>
               <div className="mt-1 font-display font-bold text-3xl">
-                {reviewsMeta.rating.toFixed(1)} / 5 · {reviewsMeta.count} reviews
+                {reviewsMeta.rating.toFixed(1)} / 5 · {reviewsMeta.count} Google reviews
               </div>
-              <p className="mt-1 text-sm text-muted">Source: Google Business Profile</p>
+              <p className="mt-1 text-sm text-muted">
+                Plus {sourceCounts.Facebook} on Facebook and {sourceCounts.Yelp} on Yelp.
+              </p>
             </div>
             <a href={site.phoneHref} className="btn-primary shrink-0">Call {site.phone}</a>
           </div>
         </div>
       </section>
 
-      <section className="bg-paper">
-        <div className="mx-auto max-w-7xl px-4 pb-20">
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {sortedReviews.map((r, i) => (
-              <ReviewCard key={r.name + r.when + i} review={r} />
-            ))}
-          </div>
-        </div>
-      </section>
+      <ReviewsWall />
 
       <JobberEmbed />
       <CtaBand />

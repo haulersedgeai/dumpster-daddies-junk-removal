@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ChevronRight, Phone } from "lucide-react";
 import { site } from "@/data/site";
+import QuoteLink from "./QuoteLink";
 
 export default function PageHero({
   eyebrow,
@@ -38,12 +39,12 @@ export default function PageHero({
         </h1>
         {intro && <p className="mt-6 text-paper/75 max-w-2xl leading-relaxed">{intro}</p>}
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href={site.phoneHref} className="btn-primary">
+          <QuoteLink className="btn-primary">
+            Get a Free Quote
+          </QuoteLink>
+          <a href={site.phoneHref} className="btn-outline-light">
             <Phone className="h-4 w-4" /> Call {site.phone}
           </a>
-          <Link href="#get-quote" className="btn-ghost bg-white/5 border-white/15 text-paper hover:bg-white/10">
-            Request a Quote
-          </Link>
         </div>
       </div>
     </section>

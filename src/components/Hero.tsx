@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Phone, Star, CheckCircle2, Sparkles } from "lucide-react";
 import { site } from "@/data/site";
+import QuoteLink from "./QuoteLink";
 
 export default function Hero() {
   return (
@@ -30,12 +30,12 @@ export default function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={site.phoneHref} className="btn-primary">
-              <Phone className="h-5 w-5" /> Call {site.phone}
+            <QuoteLink className="btn-primary">
+              <Sparkles className="h-5 w-5" /> Get a Free Quote
+            </QuoteLink>
+            <a href={site.phoneHref} className="btn-ghost">
+              <Phone className="h-5 w-5 text-signal" /> Call {site.phone}
             </a>
-            <Link href="#get-quote" className="btn-ghost">
-              <Sparkles className="h-5 w-5 text-signal" /> Get a Free Quote
-            </Link>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-2">
