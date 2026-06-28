@@ -4,7 +4,7 @@ import QuoteLink from "./QuoteLink";
 
 export default function CtaBand({
   title = "Ready to get your space back?",
-  body = "Same-day junk removal across Leander, Cedar Park, and 20 miles around. Upfront flat-rate pricing — no hidden fees.",
+  body = "Same- or next-day junk removal across Leander, Cedar Park, and 20 miles around. Upfront flat-rate pricing — no hidden fees.",
 }: {
   title?: string;
   body?: string;

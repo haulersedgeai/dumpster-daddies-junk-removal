@@ -13,7 +13,7 @@ export function localBusinessSchema() {
     name: site.name,
     alternateName: site.shortName,
     description:
-      "Family-owned junk removal in Leander, Cedar Park, and across Central Texas. Same-day service, upfront flat-rate pricing, 5.0★ on 104 Google reviews.",
+      "Family-owned junk removal in Leander, Cedar Park, and across Central Texas. Same- or next-day service, upfront flat-rate pricing, 5.0★ on 104 Google reviews.",
     telephone: site.phone,
     url: site.url,
     image: `${site.url}/images/hero-gage.jpg`,

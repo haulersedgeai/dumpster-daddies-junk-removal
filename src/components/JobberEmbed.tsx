@@ -20,7 +20,7 @@ export default function JobberEmbed() {
             Send a few details and we&rsquo;ll come back with an honest, flat-rate quote — usually within minutes during business hours.
           </p>
           <ul className="mt-6 space-y-2 text-sm text-muted">
-            <li>• Same-day pickup available</li>
+            <li>• Same- or next-day pickup available</li>
             <li>• Upfront, flat-rate quotes</li>
             <li>• Military, First Responder & Holiday discounts</li>
           </ul>
@@ -29,7 +29,7 @@ export default function JobberEmbed() {
         <div className="lg:col-span-7">
           <div className="terminal p-6">
             <div className="terminal-header mb-4 flex items-center justify-between">
-              <span>{`> request_quote --same-day`}</span>
+              <span>{`> request_quote --next-day`}</span>
               <span className="flex items-center gap-1.5">
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
                 <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />

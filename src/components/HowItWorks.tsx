@@ -9,7 +9,7 @@ const steps = [
   {
     icon: Truck,
     title: "We Show Up On Time",
-    body: "We text 15 minutes before arrival. We load, sweep, and haul — same-day available 7am–8pm.",
+    body: "We text 15 minutes before arrival. We load, sweep, and haul — same or next day available 7am–8pm.",
   },
   {
     icon: Sparkles,

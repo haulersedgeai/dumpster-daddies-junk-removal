@@ -143,11 +143,14 @@ export default function Header() {
               <Link href="/services" onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-md hover:bg-white text-signal font-semibold">All Services →</Link>
 
               <div className="mt-2 px-3 text-xs font-semibold uppercase tracking-wider text-muted">Service Areas</div>
-              {towns.slice(0, 8).map((t) => (
-                <Link key={t.slug} href={`/service-areas/${t.slug}`} onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-md hover:bg-white text-sm text-muted">
-                  {t.name}
-                </Link>
-              ))}
+              {(["leander","cedar-park","liberty-hill","georgetown","round-rock","lago-vista"] as const)
+                .map((slug) => towns.find((t) => t.slug === slug))
+                .filter((t): t is NonNullable<typeof t> => Boolean(t))
+                .map((t) => (
+                  <Link key={t.slug} href={`/service-areas/${t.slug}`} onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-md hover:bg-white text-sm text-muted">
+                    {t.name}
+                  </Link>
+                ))}
               <Link href="/service-areas" onClick={() => setOpen(false)} className="px-3 py-2.5 rounded-md hover:bg-white text-signal font-semibold">All Service Areas →</Link>
 
               <div className="mt-2 h-px bg-line" />

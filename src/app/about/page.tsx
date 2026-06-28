@@ -25,7 +25,7 @@ const beliefs = [
 const setsApart = [
   "Owner-on-every-job — you'll meet Gage",
   "5.0★ on 104 Google reviews",
-  "Same-day service across a 20-mile radius",
+  "Same- or next-day service across a 20-mile radius",
   "Flat-rate, written quotes — no hidden fees",
   "Military, First Responder, and Holiday discounts",
   "Open 7am–8pm, 7 days a week",

@@ -1,6 +1,6 @@
 # Dumpster Daddies Junk Removal
 
-> Family-owned same-day junk removal, large cleanouts, demolition, and dumpster rentals based in Leander, TX, serving a 20-mile radius across Central Texas. 5.0 stars on 104 Google reviews. Open 7am–8pm, 7 days a week.
+> Family-owned same- or next-day junk removal, large cleanouts, demolition, and dumpster rentals based in Leander, TX, serving a 20-mile radius across Central Texas. 5.0 stars on 104 Google reviews. Open 7am–8pm, 7 days a week.
 
 ## Business
 - Name: Dumpster Daddies Junk Removal
@@ -24,7 +24,7 @@
 - Commercial Cleanouts (offices, retail, warehouses) — /services/commercial-cleanouts
 - Light Demolition (sheds, decks, fences, barns, hot tubs — nothing with water/power active) — /services/demolition
 - Furniture Removal — /services/furniture-removal
-- Dumpster Rentals — 17-yard dumpsters starting at $449, flat-rate, no hidden fees, same-day delivery available — /services/dumpster-rentals
+- Dumpster Rentals — 17-yard dumpsters starting at $449, flat-rate, no hidden fees, same- or next-day delivery available — /services/dumpster-rentals
 
 ## Service Area
 Primary towns (dedicated pages):

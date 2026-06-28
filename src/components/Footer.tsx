@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Clock, MapPin, Star } from "lucide-react";
+import { Phone, Clock, MapPin, Star, ChevronDown } from "lucide-react";
 import { site, services, towns } from "@/data/site";
 
 const socials = [
@@ -50,7 +50,7 @@ export default function Footer() {
             <span className="font-display font-bold text-lg">Dumpster Daddies</span>
           </div>
           <p className="text-sm text-paper/70 leading-relaxed max-w-sm">
-            Family-owned junk removal & cleanouts based in Leander, TX. Same-day service across Central Texas. 5.0★ on {site.reviewCount} Google reviews.
+            Family-owned junk removal & cleanouts based in Leander, TX. Same- or next-day service across Central Texas. 5.0★ on {site.reviewCount} Google reviews.
           </p>
 
           <div className="space-y-2 text-sm">
@@ -94,9 +94,12 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="md:col-span-3">
-          <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 mb-5">Services</h4>
-          <ul className="space-y-2.5 text-sm">
+        <details className="md:col-span-3 border-t border-white/10 md:border-0 pt-4 md:pt-0 footer-accordion [&[open]>summary>svg]:rotate-180">
+          <summary className="list-none flex items-center justify-between md:block cursor-pointer md:cursor-default md:pointer-events-none">
+            <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 md:mb-5">Services</h4>
+            <ChevronDown className="h-4 w-4 text-paper/50 transition-transform md:hidden" />
+          </summary>
+          <ul className="space-y-2.5 text-sm pt-4 md:pt-0">
             {services.map((s) => (
               <li key={s.slug}>
                 <Link href={`/services/${s.slug}`} className="text-paper/80 hover:text-lime">
@@ -105,11 +108,14 @@ export default function Footer() {
               </li>
             ))}
           </ul>
-        </div>
+        </details>
 
-        <div className="md:col-span-3">
-          <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 mb-5">Service Areas</h4>
-          <ul className="space-y-2.5 text-sm">
+        <details className="md:col-span-3 border-t border-white/10 md:border-0 pt-4 md:pt-0 footer-accordion [&[open]>summary>svg]:rotate-180">
+          <summary className="list-none flex items-center justify-between md:block cursor-pointer md:cursor-default md:pointer-events-none">
+            <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 md:mb-5">Service Areas</h4>
+            <ChevronDown className="h-4 w-4 text-paper/50 transition-transform md:hidden" />
+          </summary>
+          <ul className="space-y-2.5 text-sm pt-4 md:pt-0">
             {towns.slice(0, 12).map((t) => (
               <li key={t.slug}>
                 <Link href={`/service-areas/${t.slug}`} className="text-paper/80 hover:text-lime">
@@ -121,18 +127,21 @@ export default function Footer() {
               <Link href="/service-areas" className="text-signal hover:text-lime font-semibold">All areas →</Link>
             </li>
           </ul>
-        </div>
+        </details>
 
-        <div className="md:col-span-2">
-          <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 mb-5">Company</h4>
-          <ul className="space-y-2.5 text-sm">
+        <details className="md:col-span-2 border-t border-white/10 md:border-0 pt-4 md:pt-0 footer-accordion [&[open]>summary>svg]:rotate-180">
+          <summary className="list-none flex items-center justify-between md:block cursor-pointer md:cursor-default md:pointer-events-none">
+            <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 md:mb-5">Company</h4>
+            <ChevronDown className="h-4 w-4 text-paper/50 transition-transform md:hidden" />
+          </summary>
+          <ul className="space-y-2.5 text-sm pt-4 md:pt-0">
             <li><Link href="/about" className="text-paper/80 hover:text-lime">About</Link></li>
             <li><Link href="/reviews" className="text-paper/80 hover:text-lime">Reviews</Link></li>
             <li><Link href="/contact" className="text-paper/80 hover:text-lime">Contact</Link></li>
             <li><Link href="/terms" className="text-paper/80 hover:text-lime">Terms</Link></li>
             <li><Link href="/privacy" className="text-paper/80 hover:text-lime">Privacy</Link></li>
           </ul>
-        </div>
+        </details>
       </div>
 
       <div className="border-t border-white/10">

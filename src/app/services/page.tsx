@@ -10,7 +10,7 @@ import { categories, services, site, type CategoryKey } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Junk Removal & Cleanout Services",
-  description: "Same-day junk removal, large cleanouts, demolition, dumpster rentals and more across Leander, Cedar Park and Central Texas.",
+  description: "Same- or next-day junk removal, large cleanouts, demolition, dumpster rentals and more across Leander, Cedar Park and Central Texas.",
   alternates: { canonical: "/services" },
 };
 

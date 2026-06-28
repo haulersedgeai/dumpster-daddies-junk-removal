@@ -27,7 +27,7 @@ export async function generateMetadata({
   if (!town) return {};
   return {
     title: `Junk Removal in ${town.name}, TX`,
-    description: `Same-day junk removal, large cleanouts, and dumpster rentals in ${town.name}, TX. Family-owned, flat-rate pricing. 5.0★ on ${site.reviewCount} Google reviews.`,
+    description: `Same- or next-day junk removal, large cleanouts, and dumpster rentals in ${town.name}, TX. Family-owned, flat-rate pricing. 5.0★ on ${site.reviewCount} Google reviews.`,
     alternates: { canonical: `/service-areas/${town.slug}` },
   };
 }
@@ -50,8 +50,8 @@ export default async function TownPage({
 
   const localFaq = [
     {
-      q: `Do you offer same-day junk removal in ${town.name}?`,
-      a: `Yes. ${town.name} is well inside our 20-mile radius from Leander, and same-day pickups are standard there. Call before noon for best chances of an afternoon slot.`,
+      q: `Do you offer same- or next-day junk removal in ${town.name}?`,
+      a: `Yes. ${town.name} is well inside our 20-mile radius from Leander, and same- or next-day pickups are standard there. Call before noon for best chances of an afternoon slot.`,
     },
     {
       q: `How is pricing calculated for ${town.name} jobs?`,
@@ -81,7 +81,7 @@ export default async function TownPage({
       <PageHero
         eyebrow={`${town.name}, TX`}
         title={`Junk Removal in ${town.name}, TX`}
-        intro={`${town.blurb ?? `${town.name} is right in our service area.`} Same-day pickups, flat-rate pricing, broom-clean finish — 5.0★ on ${site.reviewCount} Google reviews.`}
+        intro={`${town.blurb ?? `${town.name} is right in our service area.`} Same- or next-day pickups, flat-rate pricing, broom-clean finish — 5.0★ on ${site.reviewCount} Google reviews.`}
         breadcrumbs={[
           { name: "Home", href: "/" },
           { name: "Service Areas", href: "/service-areas" },
@@ -97,7 +97,7 @@ export default async function TownPage({
             </h2>
             <div className="mt-6 prose prose-sm max-w-none text-muted leading-relaxed space-y-4">
               <p>
-                We&rsquo;re based in Leander, just {town.distanceMi ?? "a short drive"} miles from {town.name}, which means we can usually be at your driveway the same day you call. Whether you&rsquo;ve got a single couch, a packed garage, or an entire house to clear, the same family-owned crew shows up — on time, in uniform, with a flat-rate quote in hand.
+                We&rsquo;re based in Leander, just {town.distanceMi ?? "a short drive"} miles from {town.name}, which means we can usually be at your driveway the same or next day you call. Whether you&rsquo;ve got a single couch, a packed garage, or an entire house to clear, the same family-owned crew shows up — on time, in uniform, with a flat-rate quote in hand.
               </p>
               <p>
                 {town.name} jobs we run all the time: garage cleanouts, mattress and furniture removal, estate and eviction cleanouts for realtors and property managers, post-remodel debris haul-offs for contractors, and 17-yard dumpster drops for bigger weekend projects.
@@ -117,7 +117,7 @@ export default async function TownPage({
               <p className="mt-1 text-sm text-muted">{town.distanceMi} miles from Leander HQ</p>
             )}
             <ul className="mt-5 space-y-2 text-sm">
-              <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Same-day service</span><span>Yes</span></li>
+              <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Same/next-day service</span><span>Yes</span></li>
               <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Hours</span><span>7a–8p, 7 days</span></li>
               <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Rating</span><span>5.0★ ({site.reviewCount})</span></li>
               <li className="flex justify-between"><span className="text-muted">Discounts</span><span>Military · FR · Holiday</span></li>

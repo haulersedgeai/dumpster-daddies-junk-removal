@@ -10,7 +10,7 @@ import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Contact Dumpster Daddies — Call (512) 677-2803",
-  description: `Call ${site.phone}. Open 7am–8pm, 7 days a week. Same-day junk removal across Leander, Cedar Park, and 20 miles around.`,
+  description: `Call ${site.phone}. Open 7am–8pm, 7 days a week. Same- or next-day junk removal across Leander, Cedar Park, and 20 miles around.`,
   alternates: { canonical: "/contact" },
 };
 
@@ -44,7 +44,7 @@ export default function ContactPage() {
             <Clock className="h-6 w-6 text-signal" />
             <h3 className="mt-3 font-display font-bold text-xl">Hours</h3>
             <p className="mt-1 text-2xl font-display font-bold">{site.hoursHuman}</p>
-            <p className="mt-2 text-sm text-muted">Same-day pickups are standard. Weekends and holidays included.</p>
+            <p className="mt-2 text-sm text-muted">Same- or next-day pickups are standard. Weekends and holidays included.</p>
           </div>
           <div className="card">
             <MapPin className="h-6 w-6 text-signal" />

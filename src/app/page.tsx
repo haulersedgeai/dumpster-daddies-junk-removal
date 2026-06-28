@@ -29,7 +29,7 @@ export default function Home() {
               Every cleanout, one crew.
             </h2>
             <p className="mt-4 text-muted">
-              Same-day junk removal, large cleanouts, demolition, dumpster drops — all under one roof with the same flat-rate honesty.
+              Same- or next-day junk removal, large cleanouts, demolition, dumpster drops — all under one roof with the same flat-rate honesty.
             </p>
           </div>
           <div className="mt-12">
