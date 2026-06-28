@@ -240,19 +240,6 @@ body {
   100% { transform: translateX(-50%); }
 }
 
-/* Footer accordions: collapsed on mobile, force-open on md+ */
-@media (min-width: 768px) {
-  details.footer-accordion > summary {
-    list-style: none;
-    pointer-events: none;
-  }
-  details.footer-accordion > summary::-webkit-details-marker { display: none; }
-  details.footer-accordion > *:not(summary) {
-    display: block !important;
-    content-visibility: visible !important;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

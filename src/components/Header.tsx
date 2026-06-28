@@ -200,15 +200,15 @@ export default function Header() {
         scrolled ? "bg-paper/90 backdrop-blur border-b border-line" : "bg-paper"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between gap-4">
+      <div className="mx-auto max-w-7xl px-4 h-[72px] flex items-center justify-between gap-4">
         <Link href="/" className="flex items-center gap-2.5 group" aria-label="Dumpster Daddies — Home">
           <Image
             src="/logo.png"
             alt="Dumpster Daddies Junk Removal"
-            width={92}
-            height={92}
+            width={112}
+            height={112}
             priority
-            className="h-11 w-11 object-contain"
+            className="h-14 w-14 object-contain"
           />
           <span className="font-display font-bold text-lg leading-tight text-ink">
             Dumpster Daddies

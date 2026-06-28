@@ -3,6 +3,82 @@ import Image from "next/image";
 import { Phone, Clock, MapPin, Star, ChevronDown } from "lucide-react";
 import { site, services, towns } from "@/data/site";
 
+type FooterLink = { href: string; label: string; accent?: boolean };
+
+const servicesLinks: FooterLink[] = services.map((s) => ({
+  href: `/services/${s.slug}`,
+  label: s.title,
+}));
+
+const areaLinks: FooterLink[] = [
+  ...towns.slice(0, 12).map((t) => ({ href: `/service-areas/${t.slug}`, label: t.name })),
+  { href: "/service-areas", label: "All areas →", accent: true },
+];
+
+const companyLinks: FooterLink[] = [
+  { href: "/about", label: "About" },
+  { href: "/reviews", label: "Reviews" },
+  { href: "/contact", label: "Contact" },
+  { href: "/terms", label: "Terms" },
+  { href: "/privacy", label: "Privacy" },
+];
+
+function FooterLinkList({ links }: { links: FooterLink[] }) {
+  return (
+    <ul className="space-y-2.5 text-sm">
+      {links.map((l) => (
+        <li key={l.href}>
+          <Link
+            href={l.href}
+            className={
+              l.accent
+                ? "text-signal hover:text-lime font-semibold"
+                : "text-paper/80 hover:text-lime"
+            }
+          >
+            {l.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function DesktopColumn({
+  title,
+  links,
+  span,
+}: {
+  title: string;
+  links: FooterLink[];
+  span: string;
+}) {
+  return (
+    <div className={`hidden md:block ${span}`}>
+      <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 mb-5">
+        {title}
+      </h4>
+      <FooterLinkList links={links} />
+    </div>
+  );
+}
+
+function MobileAccordion({ title, links }: { title: string; links: FooterLink[] }) {
+  return (
+    <details className="md:hidden border-t border-white/10 pt-4 [&[open]>summary>svg]:rotate-180">
+      <summary className="list-none flex items-center justify-between cursor-pointer">
+        <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50">
+          {title}
+        </h4>
+        <ChevronDown className="h-4 w-4 text-paper/50 transition-transform" />
+      </summary>
+      <div className="pt-4">
+        <FooterLinkList links={links} />
+      </div>
+    </details>
+  );
+}
+
 const socials = [
   {
     name: "Google",
@@ -48,9 +124,9 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="Dumpster Daddies Junk Removal"
-              width={144}
-              height={144}
-              className="h-[72px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
+              width={260}
+              height={260}
+              className="h-[132px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] mb-1"
             />
           </Link>
           <p className="text-sm text-paper/70 leading-relaxed max-w-sm">
@@ -98,54 +174,15 @@ export default function Footer() {
           </div>
         </div>
 
-        <details className="md:col-span-3 border-t border-white/10 md:border-0 pt-4 md:pt-0 footer-accordion [&[open]>summary>svg]:rotate-180">
-          <summary className="list-none flex items-center justify-between md:block cursor-pointer md:cursor-default md:pointer-events-none">
-            <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 md:mb-5">Services</h4>
-            <ChevronDown className="h-4 w-4 text-paper/50 transition-transform md:hidden" />
-          </summary>
-          <ul className="space-y-2.5 text-sm pt-4 md:pt-0">
-            {services.map((s) => (
-              <li key={s.slug}>
-                <Link href={`/services/${s.slug}`} className="text-paper/80 hover:text-lime">
-                  {s.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </details>
+        <DesktopColumn title="Services" links={servicesLinks} span="md:col-span-3" />
+        <DesktopColumn title="Service Areas" links={areaLinks} span="md:col-span-3" />
+        <DesktopColumn title="Company" links={companyLinks} span="md:col-span-2" />
 
-        <details className="md:col-span-3 border-t border-white/10 md:border-0 pt-4 md:pt-0 footer-accordion [&[open]>summary>svg]:rotate-180">
-          <summary className="list-none flex items-center justify-between md:block cursor-pointer md:cursor-default md:pointer-events-none">
-            <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 md:mb-5">Service Areas</h4>
-            <ChevronDown className="h-4 w-4 text-paper/50 transition-transform md:hidden" />
-          </summary>
-          <ul className="space-y-2.5 text-sm pt-4 md:pt-0">
-            {towns.slice(0, 12).map((t) => (
-              <li key={t.slug}>
-                <Link href={`/service-areas/${t.slug}`} className="text-paper/80 hover:text-lime">
-                  {t.name}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link href="/service-areas" className="text-signal hover:text-lime font-semibold">All areas →</Link>
-            </li>
-          </ul>
-        </details>
-
-        <details className="md:col-span-2 border-t border-white/10 md:border-0 pt-4 md:pt-0 footer-accordion [&[open]>summary>svg]:rotate-180">
-          <summary className="list-none flex items-center justify-between md:block cursor-pointer md:cursor-default md:pointer-events-none">
-            <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 md:mb-5">Company</h4>
-            <ChevronDown className="h-4 w-4 text-paper/50 transition-transform md:hidden" />
-          </summary>
-          <ul className="space-y-2.5 text-sm pt-4 md:pt-0">
-            <li><Link href="/about" className="text-paper/80 hover:text-lime">About</Link></li>
-            <li><Link href="/reviews" className="text-paper/80 hover:text-lime">Reviews</Link></li>
-            <li><Link href="/contact" className="text-paper/80 hover:text-lime">Contact</Link></li>
-            <li><Link href="/terms" className="text-paper/80 hover:text-lime">Terms</Link></li>
-            <li><Link href="/privacy" className="text-paper/80 hover:text-lime">Privacy</Link></li>
-          </ul>
-        </details>
+        <div className="md:hidden space-y-0">
+          <MobileAccordion title="Services" links={servicesLinks} />
+          <MobileAccordion title="Service Areas" links={areaLinks} />
+          <MobileAccordion title="Company" links={companyLinks} />
+        </div>
       </div>
 
       <div className="border-t border-white/10">
