@@ -1,14 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #11192B;
-  --paper: #F8F6EF;
-  --signal: #1E9D5A;
-  --signal-600: #178a4d;
-  --lime: #C8FF4D;
-  --tech: #1E5BFF;
-  --muted: #5B6472;
-  --line: #E6E3D8;
+  --ink: #22303F;
+  --paper: #F7F3E9;
+  --cream: #F3E8CC;
+  --signal: #C2492A;
+  --signal-600: #A23C21;
+  --lime: #D89A2E;
+  --tech: #C2492A;
+  --accent: #C2492A;
+  --muted: #6A6356;
+  --line: #E8E0CE;
   --background: var(--paper);
   --foreground: var(--ink);
 }
@@ -18,10 +20,12 @@
   --color-foreground: var(--foreground);
   --color-ink: var(--ink);
   --color-paper: var(--paper);
+  --color-cream: var(--cream);
   --color-signal: var(--signal);
   --color-signal-600: var(--signal-600);
   --color-lime: var(--lime);
   --color-tech: var(--tech);
+  --color-accent: var(--accent);
   --color-muted: var(--muted);
   --color-line: var(--line);
   --font-display: var(--font-space-grotesk);
@@ -52,7 +56,7 @@ body {
 }
 
 .dot-grid {
-  background-image: radial-gradient(rgba(17, 25, 43, 0.025) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(34, 48, 63, 0.04) 1px, transparent 1px);
   background-size: 28px 28px;
 }
 
@@ -62,16 +66,16 @@ body {
 }
 
 .warm-wash {
-  background: radial-gradient(ellipse at top, rgba(255, 248, 230, 0.7) 0%, rgba(248, 246, 239, 0) 60%);
+  background: radial-gradient(ellipse at top, rgba(243, 232, 204, 0.6) 0%, rgba(247, 243, 233, 0) 60%);
 }
 
 .glow-green {
-  background: radial-gradient(circle at center, rgba(30, 157, 90, 0.12) 0%, rgba(30, 157, 90, 0) 65%);
+  background: radial-gradient(circle at center, rgba(194, 73, 42, 0.14) 0%, rgba(194, 73, 42, 0) 65%);
   filter: blur(50px);
 }
 
 .glow-lime {
-  background: radial-gradient(circle at center, rgba(200, 255, 77, 0.12) 0%, rgba(200, 255, 77, 0) 65%);
+  background: radial-gradient(circle at center, rgba(216, 154, 46, 0.16) 0%, rgba(216, 154, 46, 0) 65%);
   filter: blur(50px);
 }
 
@@ -80,7 +84,7 @@ body {
   color: var(--ink);
   border-radius: 20px;
   border: 1px solid var(--line);
-  box-shadow: 0 30px 60px -40px rgba(17, 25, 43, 0.25);
+  box-shadow: 0 30px 60px -40px rgba(34, 48, 63, 0.25);
 }
 
 .trust-seal {
@@ -108,7 +112,7 @@ body {
   color: var(--ink);
   font-weight: 500;
   line-height: 1.2;
-  box-shadow: 0 1px 0 rgba(17, 25, 43, 0.03);
+  box-shadow: 0 1px 0 rgba(34, 48, 63, 0.05);
 }
 
 .btn-primary {
@@ -123,12 +127,12 @@ body {
   font-weight: 600;
   letter-spacing: -0.01em;
   transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
-  box-shadow: 0 8px 24px -10px rgba(30, 157, 90, 0.45);
+  box-shadow: 0 8px 24px -10px rgba(194, 73, 42, 0.45);
 }
 .btn-primary:hover {
   background: var(--signal-600);
   transform: translateY(-1px);
-  box-shadow: 0 14px 30px -10px rgba(30, 157, 90, 0.55);
+  box-shadow: 0 14px 30px -10px rgba(194, 73, 42, 0.55);
 }
 
 .btn-ghost {
@@ -162,7 +166,7 @@ body {
   transition: transform 0.15s ease, background 0.2s ease;
 }
 .btn-dark:hover {
-  background: #1a2138;
+  background: #2c3e51;
   transform: translateY(-1px);
 }
 
@@ -207,7 +211,7 @@ body {
   background: rgba(255, 255, 255, 0.07);
   border: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 13px;
-  color: #e6efe9;
+  color: #f3e8cc;
   font-weight: 500;
 }
 
@@ -220,8 +224,8 @@ body {
 }
 .card:hover {
   transform: translateY(-2px);
-  border-color: #cdd2c5;
-  box-shadow: 0 20px 40px -20px rgba(11, 15, 28, 0.15);
+  border-color: #d6cdb4;
+  box-shadow: 0 20px 40px -20px rgba(34, 48, 63, 0.15);
 }
 
 .marquee-track {

@@ -11,8 +11,8 @@ export interface Review {
 }
 
 const sourceStyles: Record<string, string> = {
-  Google: "bg-tech/10 text-tech border-tech/30",
-  Facebook: "bg-tech/10 text-tech border-tech/30",
+  Google: "bg-signal/10 text-signal border-signal/30",
+  Facebook: "bg-ink/10 text-ink border-ink/30",
   Yelp: "bg-[#d32323]/10 text-[#d32323] border-[#d32323]/30",
 };
 

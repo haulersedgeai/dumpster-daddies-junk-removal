@@ -78,7 +78,7 @@ export default function ServicesPage() {
                         href={`/services/${hub.slug}`}
                         className="card border-signal/40 bg-white"
                       >
-                        <span className="chip mb-3" style={{ background: "#C8FF4D", borderColor: "#C8FF4D" }}>
+                        <span className="chip mb-3" style={{ background: "#F3E8CC", borderColor: "#D89A2E", color: "#22303F" }}>
                           Main page
                         </span>
                         <h3 className="font-display font-bold text-lg">{hub.title}</h3>

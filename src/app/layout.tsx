@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
@@ -41,6 +41,10 @@ export const metadata: Metadata = {
     description: `5.0★ on ${site.reviewCount} reviews · Open 7am–8pm, 7 days.`,
     images: ["/images/hero-gage.jpg"],
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#22303F",
 };
 
 export default function RootLayout({

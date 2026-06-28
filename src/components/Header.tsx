@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
@@ -200,11 +201,16 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2 group" aria-label="Dumpster Daddies — Home">
-          <span className="inline-flex h-8 w-8 items-center justify-center rounded-lg bg-ink text-lime font-display font-bold text-lg group-hover:bg-signal transition-colors">
-            DD
-          </span>
-          <span className="font-display font-bold text-lg leading-tight">
+        <Link href="/" className="flex items-center gap-2.5 group" aria-label="Dumpster Daddies — Home">
+          <Image
+            src="/logo.png"
+            alt="Dumpster Daddies Junk Removal"
+            width={92}
+            height={92}
+            priority
+            className="h-11 w-11 object-contain"
+          />
+          <span className="font-display font-bold text-lg leading-tight text-ink">
             Dumpster Daddies
           </span>
         </Link>

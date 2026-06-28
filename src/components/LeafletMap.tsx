@@ -7,8 +7,8 @@ import "leaflet/dist/leaflet.css";
 import { towns, site } from "@/data/site";
 
 function pinIcon(highlight = false) {
-  const color = highlight ? "#C8FF4D" : "#0B0F1C";
-  const stroke = highlight ? "#0B0F1C" : "#FFFFFF";
+  const color = highlight ? "#D89A2E" : "#22303F";
+  const stroke = highlight ? "#22303F" : "#FFFFFF";
   const size = highlight ? 22 : 14;
   return L.divIcon({
     className: "dd-pin",
@@ -36,7 +36,7 @@ export default function LeafletMap() {
       center={center}
       zoom={10}
       scrollWheelZoom={false}
-      style={{ height: "100%", width: "100%", borderRadius: "1.5rem", background: "#F7F8F4" }}
+      style={{ height: "100%", width: "100%", borderRadius: "1.5rem", background: "#F7F3E9" }}
       attributionControl
     >
       <TileLayer
@@ -47,8 +47,8 @@ export default function LeafletMap() {
         center={center}
         radius={32186}
         pathOptions={{
-          color: "#00B866",
-          fillColor: "#00B866",
+          color: "#C2492A",
+          fillColor: "#C2492A",
           fillOpacity: 0.08,
           weight: 2,
           dashArray: "6 6",
@@ -69,7 +69,7 @@ export default function LeafletMap() {
                   {t.name}, TX
                 </strong>
                 {typeof t.distanceMi === "number" && (
-                  <div style={{ fontSize: 11, color: "#5B6472", marginTop: 2 }}>
+                  <div style={{ fontSize: 11, color: "#6A6356", marginTop: 2 }}>
                     ~{t.distanceMi} mi from Leander
                   </div>
                 )}
@@ -79,7 +79,7 @@ export default function LeafletMap() {
                     display: "inline-block",
                     marginTop: 8,
                     fontSize: 12,
-                    color: "#00B866",
+                    color: "#C2492A",
                     fontWeight: 600,
                   }}
                 >

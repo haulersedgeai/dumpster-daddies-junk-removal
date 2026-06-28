@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Clock, MapPin, Star, ChevronDown } from "lucide-react";
 import { site, services, towns } from "@/data/site";
 
@@ -43,12 +44,15 @@ export default function Footer() {
     <footer className="bg-ink text-paper mt-24">
       <div className="mx-auto max-w-7xl px-4 pt-16 pb-10 grid gap-12 md:grid-cols-12">
         <div className="md:col-span-4 space-y-5">
-          <div className="flex items-center gap-2">
-            <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-signal text-ink font-display font-bold text-lg">
-              DD
-            </span>
-            <span className="font-display font-bold text-lg">Dumpster Daddies</span>
-          </div>
+          <Link href="/" aria-label="Dumpster Daddies — Home" className="inline-block">
+            <Image
+              src="/logo.png"
+              alt="Dumpster Daddies Junk Removal"
+              width={144}
+              height={144}
+              className="h-[72px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)]"
+            />
+          </Link>
           <p className="text-sm text-paper/70 leading-relaxed max-w-sm">
             Family-owned junk removal & cleanouts based in Leander, TX. Same and next-day service across Central Texas — flat-rate quotes, broom-clean finish.
           </p>
