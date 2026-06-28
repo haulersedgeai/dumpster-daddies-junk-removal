@@ -124,9 +124,9 @@ export default function Footer() {
             <Image
               src="/logo.png"
               alt="Dumpster Daddies Junk Removal"
-              width={260}
-              height={260}
-              className="h-[132px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] mb-1"
+              width={400}
+              height={400}
+              className="h-[200px] w-auto object-contain drop-shadow-[0_4px_16px_rgba(0,0,0,0.35)] mb-2"
             />
           </Link>
           <p className="text-sm text-paper/70 leading-relaxed max-w-sm">

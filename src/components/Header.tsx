@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
@@ -200,17 +199,9 @@ export default function Header() {
         scrolled ? "bg-paper/90 backdrop-blur border-b border-line" : "bg-paper"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-4 h-[72px] flex items-center justify-between gap-4">
-        <Link href="/" className="flex items-center gap-2.5 group" aria-label="Dumpster Daddies — Home">
-          <Image
-            src="/logo.png"
-            alt="Dumpster Daddies Junk Removal"
-            width={112}
-            height={112}
-            priority
-            className="h-14 w-14 object-contain"
-          />
-          <span className="font-display font-bold text-lg leading-tight text-ink">
+      <div className="mx-auto max-w-7xl px-4 h-16 flex items-center justify-between gap-4">
+        <Link href="/" className="flex items-center group" aria-label="Dumpster Daddies — Home">
+          <span className="font-display font-bold text-xl leading-tight text-ink">
             Dumpster Daddies
           </span>
         </Link>
