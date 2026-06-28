@@ -1,13 +1,33 @@
-import QuoteForm from "./QuoteForm";
+"use client";
 
-/**
- * One file to edit when the Jobber embed is ready.
- *
- * Replace the entire return-block below the marker with the
- * snippet Jobber gives you (usually a <script> + <div id="...">),
- * then ship.
- */
+import { useEffect } from "react";
+
+const CLIENTHUB_ID = "ab1f7e84-caea-43ba-8934-fbe85511c6ea-2449640";
+const FORM_URL =
+  "https://clienthub.getjobber.com/client_hubs/ab1f7e84-caea-43ba-8934-fbe85511c6ea/public/work_request/embedded_work_request_form?form_id=2449640";
+const STYLESHEET_HREF =
+  "https://d3ey4dbjkt2f6s.cloudfront.net/assets/external/work_request_embed.css";
+const SCRIPT_SRC =
+  "https://d3ey4dbjkt2f6s.cloudfront.net/assets/static_link/work_request_embed_snippet.js";
+
 export default function JobberEmbed() {
+  useEffect(() => {
+    if (!document.querySelector(`link[href="${STYLESHEET_HREF}"]`)) {
+      const link = document.createElement("link");
+      link.rel = "stylesheet";
+      link.href = STYLESHEET_HREF;
+      document.head.appendChild(link);
+    }
+
+    if (!document.querySelector(`script[src="${SCRIPT_SRC}"]`)) {
+      const script = document.createElement("script");
+      script.src = SCRIPT_SRC;
+      script.setAttribute("clienthub_id", CLIENTHUB_ID);
+      script.setAttribute("form_url", FORM_URL);
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <section id="get-quote" className="bg-paper">
       <div className="mx-auto max-w-7xl px-4 py-20 grid lg:grid-cols-12 gap-10 items-start">
@@ -38,9 +58,7 @@ export default function JobberEmbed() {
               </p>
             </div>
 
-            {/* ===== PASTE JOBBER EMBED CODE HERE (replaces fallback below) ===== */}
-            <QuoteForm />
-            {/* ===== END JOBBER EMBED ===== */}
+            <div id={CLIENTHUB_ID} />
           </div>
         </div>
       </div>
