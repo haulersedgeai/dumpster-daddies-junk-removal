@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://dumpsterdaddiesatx.com
+
+# Sitemaps
+Sitemap: https://dumpsterdaddiesatx.com/sitemap.xml
