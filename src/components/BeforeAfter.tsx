@@ -46,7 +46,7 @@ function Slider({ pair }: { pair: Pair }) {
 
   return (
     <div className="card p-3">
-      <div className="text-xs uppercase tracking-wider font-mono text-muted mb-2 px-2">{pair.label}</div>
+      <div className="text-xs font-semibold tracking-wide text-muted mb-2 px-2">{pair.label}</div>
       <div
         ref={containerRef}
         className="relative w-full aspect-[4/3] overflow-hidden rounded-xl select-none cursor-ew-resize bg-ink"
@@ -83,10 +83,10 @@ function Slider({ pair }: { pair: Pair }) {
           />
         </div>
         <div
-          className="absolute top-0 bottom-0 w-0.5 bg-lime"
+          className="absolute top-0 bottom-0 w-0.5 bg-white/90"
           style={{ left: `${pos}%`, transform: "translateX(-50%)" }}
         >
-          <div className="absolute top-1/2 -translate-y-1/2 -left-4 h-8 w-8 rounded-full bg-lime border-2 border-ink shadow-lg flex items-center justify-center">
+          <div className="absolute top-1/2 -translate-y-1/2 -left-4 h-8 w-8 rounded-full bg-white border border-line shadow-lg flex items-center justify-center">
             <span className="text-ink text-xs font-bold">⇆</span>
           </div>
         </div>

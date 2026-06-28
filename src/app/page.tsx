@@ -5,6 +5,7 @@ import { ServicesGrid } from "@/components/ServiceCard";
 import GuaranteeStack from "@/components/GuaranteeStack";
 import ReviewsMarquee from "@/components/ReviewsMarquee";
 import BeforeAfter from "@/components/BeforeAfter";
+import MeetGage from "@/components/MeetGage";
 import WhoWeHelp from "@/components/WhoWeHelp";
 import ServiceAreaMap from "@/components/ServiceAreaMap";
 import Faq from "@/components/Faq";
@@ -40,6 +41,7 @@ export default function Home() {
       <GuaranteeStack />
       <ReviewsMarquee />
       <BeforeAfter />
+      <MeetGage />
       <WhoWeHelp />
       <ServiceAreaMap compact />
       <Faq items={homeFaq} title="Questions, answered." />

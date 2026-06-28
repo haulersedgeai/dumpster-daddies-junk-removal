@@ -66,7 +66,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="text-xs uppercase tracking-wider text-paper/50 font-mono mb-3">Follow us</div>
+            <div className="text-xs uppercase tracking-wider text-paper/50 font-semibold mb-3">Follow us</div>
             <div className="flex items-center gap-2">
               {socials.map((s) => (
                 <a

@@ -8,7 +8,7 @@ const LeafletMap = dynamic(() => import("./LeafletMap"), {
   ssr: false,
   loading: () => (
     <div className="w-full aspect-[4/3] lg:aspect-square rounded-3xl border border-line bg-paper flex items-center justify-center">
-      <div className="text-xs uppercase tracking-wider font-mono text-muted">Loading map…</div>
+      <div className="text-sm text-muted">Loading map…</div>
     </div>
   ),
 });

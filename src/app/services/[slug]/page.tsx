@@ -106,7 +106,7 @@ export default async function ServicePage({
             ))}
           </div>
           <aside className="card h-fit">
-            <div className="text-xs uppercase tracking-wider font-mono text-muted">At a glance</div>
+            <div className="text-xs uppercase tracking-wider font-semibold text-muted">At a glance</div>
             <h3 className="mt-2 font-display font-bold text-xl">{service.title}</h3>
             <ul className="mt-4 space-y-2 text-sm">
               <li className="flex justify-between border-b border-line pb-2"><span className="text-muted">Same/next-day</span><span>Available</span></li>
@@ -184,8 +184,8 @@ export default async function ServicePage({
                 const Icon = processIcons[i] ?? Sparkles;
                 return (
                   <div key={p.step} className="card relative">
-                    <div className="absolute -top-3 left-6 px-2 py-0.5 rounded-md bg-ink text-lime text-xs font-mono">
-                      step.0{i + 1}
+                    <div className="absolute -top-3 left-6 inline-flex items-center justify-center h-7 w-7 rounded-full bg-signal text-white text-xs font-bold shadow-md">
+                      {i + 1}
                     </div>
                     <Icon className="h-7 w-7 text-signal" />
                     <h3 className="mt-3 font-display font-bold text-lg">{p.step}</h3>

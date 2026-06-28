@@ -77,7 +77,7 @@ export default function ReviewsWall() {
       <div className="mx-auto max-w-7xl px-4 pb-20">
         <div className="space-y-4">
           <div>
-            <div className="text-[11px] uppercase tracking-[0.18em] font-mono text-muted mb-2">Source</div>
+            <div className="text-xs font-semibold tracking-wide text-muted mb-2">Source</div>
             <div className="flex flex-wrap gap-2">
               {sources.map((s) => (
                 <Toggle key={s.key} active={source === s.key} onClick={() => setSourceReset(s.key)}>
@@ -87,7 +87,7 @@ export default function ReviewsWall() {
             </div>
           </div>
           <div>
-            <div className="text-[11px] uppercase tracking-[0.18em] font-mono text-muted mb-2">Topic</div>
+            <div className="text-xs font-semibold tracking-wide text-muted mb-2">Topic</div>
             <div className="flex flex-wrap gap-2">
               {topics.map((t) => (
                 <Toggle key={t.key} active={topic === t.key} onClick={() => setTopicReset(t.key)}>

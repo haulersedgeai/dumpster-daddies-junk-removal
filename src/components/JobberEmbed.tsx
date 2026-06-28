@@ -14,27 +14,28 @@ export default function JobberEmbed() {
         <div className="lg:col-span-5">
           <span className="chip">Request a Quote</span>
           <h2 className="mt-4 font-display font-bold text-3xl md:text-5xl tracking-tight">
-            Tell us what&rsquo;s going.
+            Tell us what you&rsquo;ve got.
           </h2>
           <p className="mt-4 text-muted leading-relaxed max-w-md">
             Send a few details and we&rsquo;ll come back with an honest, flat-rate quote — usually within minutes during business hours.
           </p>
+          <p className="mt-3 text-sm text-muted/90 max-w-md">
+            You&rsquo;ll talk to Gage, the owner — not a call center.
+          </p>
           <ul className="mt-6 space-y-2 text-sm text-muted">
             <li>• Same- or next-day pickup available</li>
             <li>• Upfront, flat-rate quotes</li>
-            <li>• Military, First Responder & Holiday discounts</li>
+            <li>• Military, First Responder &amp; Holiday discounts</li>
           </ul>
         </div>
 
         <div className="lg:col-span-7">
-          <div className="terminal p-6">
-            <div className="terminal-header mb-4 flex items-center justify-between">
-              <span>{`> request_quote --next-day`}</span>
-              <span className="flex items-center gap-1.5">
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f56]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#ffbd2e]" />
-                <span className="h-2.5 w-2.5 rounded-full bg-[#27c93f]" />
-              </span>
+          <div className="quote-card p-6 md:p-8">
+            <div className="mb-5">
+              <h3 className="font-display font-bold text-xl md:text-2xl">Get your free quote</h3>
+              <p className="text-sm text-muted mt-1">
+                Tell us what you&rsquo;ve got — we usually reply within minutes during business hours.
+              </p>
             </div>
 
             {/* ===== PASTE JOBBER EMBED CODE HERE (replaces fallback below) ===== */}

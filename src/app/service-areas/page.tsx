@@ -46,7 +46,7 @@ export default function ServiceAreasPage() {
                   </div>
                   {t.blurb && <p className="mt-2 text-sm text-muted leading-relaxed">{t.blurb}</p>}
                   {typeof t.distanceMi === "number" && (
-                    <span className="mt-2 inline-block text-xs font-mono text-muted">
+                    <span className="mt-2 inline-block text-xs text-muted">
                       ~{t.distanceMi} mi from Leander
                     </span>
                   )}

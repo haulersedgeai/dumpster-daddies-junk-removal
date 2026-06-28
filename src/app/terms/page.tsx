@@ -19,7 +19,7 @@ export default function TermsPage() {
       />
       <section className="bg-paper">
         <div className="mx-auto max-w-3xl px-4 py-16 prose prose-sm text-muted leading-relaxed space-y-6">
-          <p className="text-xs uppercase tracking-wider text-muted font-mono">
+          <p className="text-xs uppercase tracking-wider text-muted font-semibold">
             Informational only — not legal advice. Have counsel review before relying on this.
           </p>
 

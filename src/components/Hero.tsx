@@ -6,9 +6,9 @@ import QuoteLink from "./QuoteLink";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-paper">
-      <div className="absolute inset-0 dot-grid opacity-70 pointer-events-none" />
-      <div className="absolute -top-32 -left-32 w-[480px] h-[480px] glow-green pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-[420px] h-[420px] glow-lime pointer-events-none opacity-60" />
+      <div className="absolute inset-0 warm-wash pointer-events-none" />
+      <div className="absolute inset-0 dot-grid opacity-60 pointer-events-none" />
+      <div className="absolute -top-40 -left-40 w-[520px] h-[520px] glow-green pointer-events-none" />
 
       <div className="relative mx-auto max-w-7xl px-4 pt-12 pb-16 md:pt-20 md:pb-24 grid lg:grid-cols-12 gap-12 items-center">
         <div className="lg:col-span-7">
@@ -21,7 +21,7 @@ export default function Hero() {
             Get Your Space Back<br />
             <span className="relative inline-block">
               Without Lifting a Finger
-              <span className="absolute -bottom-2 left-0 right-0 h-3 bg-lime/60 -z-0" aria-hidden />
+              <span className="absolute -bottom-1 left-0 right-0 h-2 bg-signal/20 rounded-full -z-0" aria-hidden />
             </span>
           </h1>
 
@@ -67,9 +67,9 @@ export default function Hero() {
             <div className="font-display font-bold text-[10px] sm:text-xs uppercase tracking-wider">Open Now</div>
             <div className="text-[11px] sm:text-sm mt-0.5">7am–8pm · 7 Days</div>
           </div>
-          <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-ink text-paper rounded-xl sm:rounded-2xl px-2.5 py-1.5 sm:p-4 shadow-xl max-w-[160px] sm:max-w-[200px]">
-            <div className="font-display font-bold text-lg sm:text-2xl text-lime leading-none">5.0★</div>
-            <div className="text-[10px] sm:text-xs text-paper/70 mt-0.5 sm:mt-1">on {site.reviewCount} Google reviews</div>
+          <div className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 bg-white text-ink rounded-xl sm:rounded-2xl px-2.5 py-1.5 sm:p-4 shadow-xl border border-line max-w-[160px] sm:max-w-[200px]">
+            <div className="font-display font-bold text-lg sm:text-2xl text-signal leading-none">5.0★</div>
+            <div className="text-[10px] sm:text-xs text-muted mt-0.5 sm:mt-1">on {site.reviewCount} Google reviews</div>
           </div>
         </div>
       </div>

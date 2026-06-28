@@ -31,8 +31,8 @@ export default function HowItWorks() {
         <div className="mt-12 grid md:grid-cols-3 gap-4 relative">
           {steps.map((s, i) => (
             <div key={s.title} className="card relative">
-              <div className="absolute -top-3 left-6 px-2 py-0.5 rounded-md bg-ink text-lime text-xs font-mono">
-                step.0{i + 1}
+              <div className="absolute -top-3 left-6 inline-flex items-center justify-center h-7 w-7 rounded-full bg-signal text-white text-xs font-bold shadow-md">
+                {i + 1}
               </div>
               <s.icon className="h-8 w-8 text-signal" />
               <h3 className="mt-4 font-display font-bold text-xl">{s.title}</h3>

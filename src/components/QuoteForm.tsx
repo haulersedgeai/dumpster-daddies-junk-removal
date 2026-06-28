@@ -16,6 +16,10 @@ const options = [
   "Other / not sure",
 ];
 
+const fieldClass =
+  "bg-white border border-line focus:border-signal focus:outline-none focus:ring-2 focus:ring-signal/15 rounded-lg px-3 py-2.5 text-sm text-ink placeholder:text-muted/60";
+const labelClass = "text-xs font-medium text-muted";
+
 export default function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
 
@@ -25,74 +29,74 @@ export default function QuoteForm() {
         e.preventDefault();
         setSubmitted(true);
       }}
-      className="space-y-4 text-paper/90"
+      className="space-y-4 text-ink"
     >
       {!submitted ? (
         <>
           <div className="grid sm:grid-cols-2 gap-3">
             <label className="flex flex-col gap-1.5">
-              <span className="text-xs font-mono text-lime">name</span>
+              <span className={labelClass}>Your name</span>
               <input
                 required
                 type="text"
                 name="name"
-                className="bg-white/5 border border-white/10 focus:border-signal focus:outline-none rounded-lg px-3 py-2.5 text-sm"
+                className={fieldClass}
                 placeholder="Jane Smith"
               />
             </label>
             <label className="flex flex-col gap-1.5">
-              <span className="text-xs font-mono text-lime">phone</span>
+              <span className={labelClass}>Phone</span>
               <input
                 required
                 type="tel"
                 name="phone"
-                className="bg-white/5 border border-white/10 focus:border-signal focus:outline-none rounded-lg px-3 py-2.5 text-sm"
+                className={fieldClass}
                 placeholder="(512) 555-0100"
               />
             </label>
           </div>
           <label className="flex flex-col gap-1.5">
-            <span className="text-xs font-mono text-lime">zip</span>
+            <span className={labelClass}>ZIP code</span>
             <input
               required
               type="text"
               name="zip"
               maxLength={10}
-              className="bg-white/5 border border-white/10 focus:border-signal focus:outline-none rounded-lg px-3 py-2.5 text-sm w-40"
+              className={`${fieldClass} w-40`}
               placeholder="78641"
             />
           </label>
           <label className="flex flex-col gap-1.5">
-            <span className="text-xs font-mono text-lime">what_are_you_getting_rid_of</span>
+            <span className={labelClass}>What are you getting rid of?</span>
             <select
               required
               name="job"
-              className="bg-white/5 border border-white/10 focus:border-signal focus:outline-none rounded-lg px-3 py-2.5 text-sm"
+              className={fieldClass}
               defaultValue=""
             >
               <option value="" disabled>Select a job type…</option>
               {options.map((o) => (
-                <option key={o} value={o} className="bg-ink">{o}</option>
+                <option key={o} value={o}>{o}</option>
               ))}
             </select>
           </label>
           <button type="submit" className="btn-primary w-full mt-2">
             <Send className="h-4 w-4" /> Request a Quote
           </button>
-          <p className="text-xs text-paper/60 text-center">
+          <p className="text-xs text-muted text-center">
             We&rsquo;ll respond fast — or just{" "}
-            <a href={site.phoneHref} className="underline text-lime">call {site.phone}</a>.
+            <a href={site.phoneHref} className="text-signal font-semibold underline-offset-4 hover:underline">call {site.phone}</a>.
           </p>
         </>
       ) : (
         <div className="text-center py-6 space-y-4">
-          <div className="inline-flex h-12 w-12 rounded-full bg-signal/20 border border-signal/40 items-center justify-center">
+          <div className="inline-flex h-12 w-12 rounded-full bg-signal/10 border border-signal/30 items-center justify-center">
             <Phone className="h-6 w-6 text-signal" />
           </div>
           <div className="font-display font-bold text-2xl">Thanks — let&rsquo;s lock it in.</div>
-          <p className="text-paper/75 text-sm">
+          <p className="text-muted text-sm">
             We&rsquo;ll text you shortly. For fastest service, call{" "}
-            <span className="text-lime font-semibold">{site.phone}</span> to book on the spot.
+            <span className="text-signal font-semibold">{site.phone}</span> to book on the spot.
           </p>
           <a href={site.phoneHref} className="btn-primary">
             <Phone className="h-4 w-4" /> Call {site.phone} to book

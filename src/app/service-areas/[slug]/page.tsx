@@ -110,7 +110,7 @@ export default async function TownPage({
           <aside className="card h-fit">
             <div className="flex items-center gap-2 text-signal">
               <MapPin className="h-4 w-4" />
-              <span className="text-xs font-mono uppercase tracking-wider">Local Snapshot</span>
+              <span className="text-xs font-semibold uppercase tracking-wider">Local Snapshot</span>
             </div>
             <h3 className="mt-3 font-display font-bold text-2xl">{town.name}, TX</h3>
             {typeof town.distanceMi === "number" && (
@@ -168,7 +168,7 @@ export default async function TownPage({
                 <div>
                   <div className="font-display font-semibold">{n.name}, TX</div>
                   {typeof n.distanceMi === "number" && (
-                    <div className="text-xs text-muted font-mono">~{n.distanceMi} mi from Leander</div>
+                    <div className="text-xs text-muted">~{n.distanceMi} mi from Leander</div>
                   )}
                 </div>
                 <ArrowRight className="h-4 w-4 text-signal" />
