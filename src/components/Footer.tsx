@@ -172,6 +172,26 @@ export default function Footer() {
               </a>
             </div>
           </div>
+
+          <div className="pt-6 flex justify-center md:justify-start">
+            <a
+              href="https://www.bbb.org/us/tx/pflugerville/profile/dumpster-rentals/dumpster-daddies-junk-removal-llc-0825-1000257318/#sealclick"
+              target="_blank"
+              rel="nofollow noopener noreferrer"
+              aria-label="Dumpster Daddies Junk Removal LLC BBB Business Review"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element -- BBB requires the seal to load live from their domain; no self-hosting or proxying. */}
+              <img
+                src="https://seal-austin.bbb.org/seals/blue-seal-280-80-bbb-1000257318.png"
+                alt="Dumpster Daddies Junk Removal LLC BBB Business Review"
+                width={280}
+                height={80}
+                loading="lazy"
+                decoding="async"
+                className="h-14 w-auto md:h-16"
+              />
+            </a>
+          </div>
         </div>
 
         <DesktopColumn title="Services" links={servicesLinks} span="md:col-span-3" />
