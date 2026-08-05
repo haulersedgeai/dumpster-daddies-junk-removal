@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Clock, MapPin, Star, ChevronDown } from "lucide-react";
@@ -10,10 +11,11 @@ const servicesLinks: FooterLink[] = services.map((s) => ({
   label: s.title,
 }));
 
-const areaLinks: FooterLink[] = [
-  ...towns.slice(0, 12).map((t) => ({ href: `/service-areas/${t.slug}`, label: t.name })),
-  { href: "/service-areas", label: "All areas →", accent: true },
-];
+const areaLinks: FooterLink[] = towns
+  .slice(0, 12)
+  .map((t) => ({ href: `/service-areas/${t.slug}`, label: t.name }));
+
+const allAreasLink: FooterLink = { href: "/service-areas", label: "All areas →", accent: true };
 
 const companyLinks: FooterLink[] = [
   { href: "/about", label: "About" },
@@ -23,24 +25,51 @@ const companyLinks: FooterLink[] = [
   { href: "/privacy", label: "Privacy" },
 ];
 
-function FooterLinkList({ links }: { links: FooterLink[] }) {
+function FooterLinkAnchor({ link }: { link: FooterLink }) {
   return (
-    <ul className="space-y-2.5 text-sm">
-      {links.map((l) => (
-        <li key={l.href}>
-          <Link
-            href={l.href}
-            className={
-              l.accent
-                ? "text-signal hover:text-lime font-semibold"
-                : "text-paper/80 hover:text-lime"
-            }
-          >
-            {l.label}
-          </Link>
-        </li>
-      ))}
-    </ul>
+    <Link
+      href={link.href}
+      className={
+        link.accent
+          ? "text-signal hover:text-lime font-semibold"
+          : "text-paper/80 hover:text-lime"
+      }
+    >
+      {link.label}
+    </Link>
+  );
+}
+
+function FooterLinkList({
+  links,
+  twoCol,
+  trailing,
+}: {
+  links: FooterLink[];
+  twoCol?: boolean;
+  trailing?: FooterLink;
+}) {
+  return (
+    <>
+      <ul
+        className={
+          twoCol
+            ? "grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5 text-sm"
+            : "space-y-2.5 text-sm"
+        }
+      >
+        {links.map((l) => (
+          <li key={l.href}>
+            <FooterLinkAnchor link={l} />
+          </li>
+        ))}
+      </ul>
+      {trailing && (
+        <div className="mt-3 text-sm">
+          <FooterLinkAnchor link={trailing} />
+        </div>
+      )}
+    </>
   );
 }
 
@@ -48,22 +77,36 @@ function DesktopColumn({
   title,
   links,
   span,
+  twoCol,
+  trailing,
 }: {
   title: string;
   links: FooterLink[];
   span: string;
+  twoCol?: boolean;
+  trailing?: FooterLink;
 }) {
   return (
     <div className={`hidden md:block ${span}`}>
       <h4 className="font-display font-bold text-xs uppercase tracking-[0.18em] text-paper/50 mb-5">
         {title}
       </h4>
-      <FooterLinkList links={links} />
+      <FooterLinkList links={links} twoCol={twoCol} trailing={trailing} />
     </div>
   );
 }
 
-function MobileAccordion({ title, links }: { title: string; links: FooterLink[] }) {
+function MobileAccordion({
+  title,
+  links,
+  twoCol,
+  trailing,
+}: {
+  title: string;
+  links: FooterLink[];
+  twoCol?: boolean;
+  trailing?: FooterLink;
+}) {
   return (
     <details className="md:hidden border-t border-white/10 pt-4 [&[open]>summary>svg]:rotate-180">
       <summary className="list-none flex items-center justify-between cursor-pointer">
@@ -73,7 +116,7 @@ function MobileAccordion({ title, links }: { title: string; links: FooterLink[] 
         <ChevronDown className="h-4 w-4 text-paper/50 transition-transform" />
       </summary>
       <div className="pt-4">
-        <FooterLinkList links={links} />
+        <FooterLinkList links={links} twoCol={twoCol} trailing={trailing} />
       </div>
     </details>
   );
@@ -161,19 +204,41 @@ export default function Footer() {
                   {s.icon}
                 </a>
               ))}
-              <a
-                href={site.googleProfile}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-2 flex items-center gap-1.5 text-xs text-paper/70 hover:text-lime"
-              >
-                <Star className="h-3.5 w-3.5 fill-lime text-lime" />
-                5.0 · {site.reviewCount} on Google
-              </a>
             </div>
           </div>
+        </div>
 
-          <div className="pt-6 flex justify-center md:justify-start">
+        <DesktopColumn title="Services" links={servicesLinks} span="md:col-span-3" />
+        <DesktopColumn
+          title="Service Areas"
+          links={areaLinks}
+          span="md:col-span-5"
+          twoCol
+          trailing={allAreasLink}
+        />
+
+        <div className="md:hidden space-y-0">
+          <MobileAccordion title="Services" links={servicesLinks} />
+          <MobileAccordion title="Service Areas" links={areaLinks} twoCol trailing={allAreasLink} />
+        </div>
+      </div>
+
+      <div className="border-t border-white/10">
+        <div className="mx-auto max-w-7xl px-4 py-6 flex flex-col sm:flex-row items-center gap-4">
+          <a
+            href={site.googleProfile}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-xl border border-white/10 bg-white/5 px-4 py-3 hover:bg-white/10 transition-colors"
+          >
+            <div className="flex items-center gap-1.5">
+              <Star className="h-5 w-5 fill-lime text-lime" />
+              <span className="font-display font-bold text-xl leading-none text-paper">5.0</span>
+            </div>
+            <div className="mt-1.5 text-xs text-paper/60 whitespace-nowrap">{site.reviewCount} Google reviews</div>
+          </a>
+
+          <div className="rounded-xl border border-white/10 px-4 py-3 flex items-center">
             <a
               href="https://www.bbb.org/us/tx/pflugerville/profile/dumpster-rentals/dumpster-daddies-junk-removal-llc-0825-1000257318/#sealclick"
               target="_blank"
@@ -193,33 +258,43 @@ export default function Footer() {
             </a>
           </div>
         </div>
-
-        <DesktopColumn title="Services" links={servicesLinks} span="md:col-span-3" />
-        <DesktopColumn title="Service Areas" links={areaLinks} span="md:col-span-3" />
-        <DesktopColumn title="Company" links={companyLinks} span="md:col-span-2" />
-
-        <div className="md:hidden space-y-0">
-          <MobileAccordion title="Services" links={servicesLinks} />
-          <MobileAccordion title="Service Areas" links={areaLinks} />
-          <MobileAccordion title="Company" links={companyLinks} />
-        </div>
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto max-w-7xl px-4 py-6 flex flex-col md:flex-row items-center justify-between gap-3 text-xs text-paper/60">
-          <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-          <p>
-            Site by{" "}
-            <a
-              href="https://adimize.com"
-              target="_blank"
-              rel="noopener"
-              className="text-paper hover:text-lime underline-offset-4 hover:underline"
-            >
-              Adimize
-            </a>{" "}
-            | Local Service Digital Marketing
-          </p>
+        <div className="mx-auto max-w-7xl px-4 py-6 space-y-4 text-xs text-paper/60">
+          <nav
+            aria-label="Company"
+            className="flex flex-wrap items-center justify-center md:justify-start gap-x-3 gap-y-2"
+          >
+            {companyLinks.map((l, i) => (
+              <Fragment key={l.href}>
+                {i > 0 && (
+                  <span aria-hidden="true" className="text-paper/30 select-none">
+                    ·
+                  </span>
+                )}
+                <Link href={l.href} className="text-paper/70 hover:text-lime">
+                  {l.label}
+                </Link>
+              </Fragment>
+            ))}
+          </nav>
+
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3">
+            <p>© {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+            <p>
+              Site by{" "}
+              <a
+                href="https://adimize.com"
+                target="_blank"
+                rel="noopener"
+                className="text-paper hover:text-lime underline-offset-4 hover:underline"
+              >
+                Adimize
+              </a>{" "}
+              | Local Service Digital Marketing
+            </p>
+          </div>
         </div>
       </div>
     </footer>
